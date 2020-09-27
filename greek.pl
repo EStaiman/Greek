@@ -1333,7 +1333,7 @@ parent_of(crommyonian_sow, calydonian_boar).
 parent_of(poseidon, percy).
 
 
-%These are internal functions used to determine relationships
+%These are internal rules used to determine relationships
 %Can be queried, keep in mind they are of the form X is the <rule> of Y
 father_of(X,Y) :- parent_of(X,Y), male(X).
 mother_of(X,Y) :- parent_of(X,Y), female(X).
@@ -1357,7 +1357,7 @@ ancestor_of(X,Y) :- parent_of(X,Y).
 ancestor_of(X,Y) :- parent_of(X,Z), ancestor_of(Z,Y).
 
 
-%These functions are used for relationships, returns list satisfying rule
+%These rules are used for relationships, returns list satisfying rule
 %Of the form Y are all of the <rule> of X
 half_sibs(X,Y) :- findall(Z, half_sibling_of(X,Z),R), sort(R,Y); true.
 half_bros(X,Y) :- findall(Z, (half_sibling_of(X,Z),male(Z)),R), sort(R,Y); true.
@@ -1391,7 +1391,7 @@ whois(X) :- (male(X) -> Gen = male; Gen = female),
 cas(X,X,S) :- ancs(X,S).
 cas(X,Y,S) :- findall(Z, common_ancestor_of(X,Y,Z), R), sort(R,S); true.
 
-%Internal function that returns common ancestor Z of X and Y
+%Internal rule that returns common ancestor Z of X and Y
 common_ancestor_of(X,Y,Y) :- ancestor_of(Y,X).
 common_ancestor_of(X,Y,X) :- ancestor_of(X,Y).
 common_ancestor_of(X,Y,Z) :- ancestor_of(Z,X), ancestor_of(Z,Y).
@@ -1400,40 +1400,40 @@ common_ancestor_of(X,Y,Z) :- ancestor_of(Z,X), ancestor_of(Z,Y).
 mrca(X,X,Z) :- true, Z = [X].
 mrca(X,Y,Z) :- cas(X,Y,Array), length(Array,L), (L > 0 -> mrca_int(X,Y,Array,999,_,Z) ; Z = []).
 
-%Internal function used to find most recent common ancestors
+%Internal rule used to find most recent common ancestors
 mrca_int(_,_,[],_,P,V) :- V = [P].
 mrca_int(X,Y,[H|T],N,P,V) :- path_to_anc(X,H,X1), length(X1,L1), path_to_anc(Y,H,Y1), length(Y1,L2),
 					                 L is L1 + L2, (N == L -> mrca_int(X,Y,T,L,[H,P],V) ;
                            (N > L -> mrca_int(X,Y,T,L,H,V) ; mrca_int(X,Y,T,N,P,V))).
 
-%Internal function that finds the shortest path from X to its ancestor Y and return it
+%Internal rule that finds the shortest path from X to its ancestor Y and return it
 path_to_anc(X,X,Y) :- true, Y = [X].
 path_to_anc(X,Y,L) :- path_int(X,Y,[Y],P), flatten(P, Flat), path_split(X,Flat,[F|X1]), shortest(F,X1,L).
 
-%Internal function used to find all paths between X and A
+%Internal rule used to find all paths between X and A
 path_int(X,X,[X],Y) :- true, Y = [X].
 path_int(X,A,B,Q) :- findall(Z, (parent_of(A,Z), ancestor_of(Z,X)), R), sort(R,Y), length(Y,L),
 					         (L > 0 ->  findall(V, (member(H,Y), path_int(X,H,[B|H],W),
 						       (parent_of(A,X) -> flatten([B|X],G); G = []), append(W,G,V)), Q) ; flatten([B,X], Q)).
 
-%Internal function that splits an array of elements A into an array of paths to element X
+%Internal rule that splits an array of elements A into an array of paths to element X
 path_split(_,[],L) :- L = [].
 path_split(X,A,List) :- element_at(X,A,0,I), J is I + 1, split(A,J,L1,Tail),
                       path_split(X,Tail,L2), append([L1],L2,List).
 
-%Internal function that returns the index of element X in array
+%Internal rule that returns the index of element X in array
 element_at(X,[X|_],N,M) :- M is N.
 element_at(X,[_|Tail],N,M) :- N1 is N + 1, element_at(X,Tail,N1,M).
 
-%Internal function that split a array L at a given index N
+%Internal rule that split a array L at a given index N
 split(L,0,[],L).
 split([X|Xs],N,[X|Ys],Zs) :- N > 0, N1 is N - 1, split(Xs,N1,Ys,Zs).
 
-%Internal function that returns the shortest path in the array of paths [H|T]
+%Internal rule that returns the shortest path in the array of paths [H|T]
 shortest(A,[],X) :- true, X = A.
 shortest(A,[H|T],X) :- length(A,L1), length(H,L2), (L1 >= L2 -> shortest(H,T,X) ; shortest(A,T,X)).
 
-%Internal function that loops through and displays all paths and the common ancestor the path starts at
+%Internal rule that loops through and displays all paths and the common ancestor the path starts at
 path_display(_,_,[],[],[]).
 path_display(X,Y,[H|T],[H1|T1],[H2|T2]) :- write("Using "), write(H), nl, write(H1), nl, write(H2), nl, nl,
                                           path_display(X,Y,T,T1,T2).
@@ -1445,7 +1445,7 @@ paths(X,Y) :- mrca(X,Y,Array), flatten(Array,Flat), write("Most Recent Common An
 %Generates a path between X and Y using ancestors given in A
 paths(X,Y,A) :- paths(X,Y,A,L1,L2), path_split(X,L1,A1), path_split(Y,L2,A2), path_display(X,Y,A,A1,A2).
 
-%Internal function that actually genertes shortest path
+%Internal rule that actually genertes shortest path
 paths(_,_,[],L1,L2) :- L1 = [], L2 = [].
 paths(X,Y,[H|T],L1,L2) :-
                         path_int(X,H,[H],P1), flatten(P1, Flat1), path_split(X,Flat1,Path1s),
@@ -1471,7 +1471,7 @@ all_rel(X,X) :- write("You have input the same person twice"), nl.
 all_rel(X,Y) :- cas(X,Y,Array), flatten(Array,A), write("Common Ancestors: "), write(A), nl, nl,
               paths(X,Y,A,L1,L2), path_split(X,L1,A1), path_split(Y,L2,A2), rel_loop(X,Y,A,A1,A2).
 
-%Internal function that will loop through and print out all relations using all the mrcas
+%Internal rule that will loop through and print out all relations using all the mrcas
 rel_loop(_,_,[],[],[]).
 rel_loop(X,Y,[H|T],[P1|T1],[P2|T2]) :-
       write("Using "), write(H), nl, write(P1), nl, write(P2), nl,
@@ -1516,7 +1516,7 @@ rel_loop(X,Y,[H|T],[P1|T1],[P2|T2]) :-
 %Used to determine the correct relation if the common ancestor is not a mrca (only after all_rel)
 fix([_|T1],[_|T2],L1old,L2old,L1,L2) :- fix_int(T1,T2,L1old,L2old,L1,L2).
 
-%Internal function used to fix relation
+%Internal rule used to fix relation
 fix_int([],[],_,_,L1,L2) :- L1 is 1, L2 is 1.
 fix_int([],_,_,L2old,L1,L2) :- L1 is 1, L2 is L2old.
 fix_int(_,[],L1old,_,L1,L2) :- L2 is 1, L1 is L1old.
