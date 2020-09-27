@@ -1,0 +1,44 @@
+This project was done completely in Prolog. I recommend installing SWI-Prolog to query.
+
+In browser, you can utilize 
+https://swish.swi-prolog.org/ 
+
+ 
+
+Here is how to install:
+
+Windows
+
+Go to https://www.swi-prolog.org/download/stable
+Click the download for Windows 32-bit or 64-bit depending on your OS
+Run the installer
+Follow the instructions on the installer
+
+Mac
+
+Go to https://www.swi-prolog.org/download/stable
+Click the Mac download
+Open the .dmg file
+Drag everything into application folder
+
+Linux
+
+In command line, type sudo add-apt-repository ppa:swi-prolog/stable
+Next, type: 
+sudo apt-get update
+Finally, type
+sudo apt-get install swi-prolog
+
+
+Once installed, the .pl file extension will be associated with Prolog. The code itself has no dependencies, so once downloaded it is ready to use. So, after downloading the code, you can simply open it in and it will by default bring you into the swipl application with the file loaded in. From there, you can begin querying. 
+In Linux, simply navigate to the location of the file and type
+swipl greek.pl
+
+
+To edit from swipl, type
+edit(greek.pl).
+
+If you want to edit this project in an IDE, I recommend Atom, as there is downloadable Prolog support. Just make sure to run 
+make. 
+after every change to compile the file.
+
