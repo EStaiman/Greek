@@ -1,0 +1,26 @@
+About this project
+
+I was taking a programming languages course and I was assigned the language Prolog to learn and present.
+It was very confusing and frustrating to use, but eventually I got the hang of the basics.
+After my presentation I thought I would never use the language again, and I went to bed.
+Right before I fell asleep I had an idea: Could I use prolog to create a family tree of Greek mythology.
+I have always had an interest in Greek mythology, and I felt Prolog could be useful.
+After some quick 2AM research I discovered a few family trees, but they were all very basic,
+consisting of gender, parents, kids, and sibling. I wanted to do more.
+
+So the next morning I started work on this project.
+After establishing the basic relationships, I wanted to do more.
+My end goal was to put any two names in, and get the relationship between the two people/gods/nymphs,
+as well as listing the path that it took to get there.
+This was significantly harder than I imagined do to the complexities that is Greek mythology.
+Every function here has had at least one other completely different implementation that I scrapped
+for either being too slow, not doing what I wanted, or causing the system to completely stall indefinitely.
+But eventually I got everything working, and I am very proud of the result.
+
+This project has really taught me how Prolog works.
+I started with only the basics, and I now feel confident in saying I know the language well.
+I am definitely not saying this program is the most optimal it can be, or even that Prolog was the best
+language to write this in, but that overall it was a fun and rewarding process.
+
+P.S. A lot of time was just spent figuring out family trees of all the different heroes and gods.
+My desk and area around my desk is covered in various family trees.
