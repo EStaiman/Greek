@@ -1387,15 +1387,14 @@ whois(X) :- (male(X) -> Gen = male; Gen = female),
           write("Their shortest path to chaos is: "), write(Path).
 
 
-%Returns common ancestor Z of X and Y
-common_ancestor_of(X,Y,Y) :- ancestor_of(Y,X).
-common_ancestor_of(X,Y,X) :- ancestor_of(X,Y).
-common_ancestor_of(X,Y,Z) :- ancestor_of(Z,X), ancestor_of(Z,Y).
-
-
 %Find all common ancestors of X and Y and return it
 cas(X,X,S) :- ancs(X,S).
 cas(X,Y,S) :- findall(Z, common_ancestor_of(X,Y,Z), R), sort(R,S); true.
+
+%Internal function that returns common ancestor Z of X and Y
+common_ancestor_of(X,Y,Y) :- ancestor_of(Y,X).
+common_ancestor_of(X,Y,X) :- ancestor_of(X,Y).
+common_ancestor_of(X,Y,Z) :- ancestor_of(Z,X), ancestor_of(Z,Y).
 
 %Find most recent common ancestors of X and Y and return it
 mrca(X,X,Z) :- true, Z = [X].
