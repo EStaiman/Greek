@@ -1,21 +1,12 @@
-%Theseus grandfather is pelops, ggf is tantalus, father is poseidon, dia is hippo, who is dec from harpina and ares
-%Orpheus
-%atlanta
-%daedalus
-%Triptolemus
-%Pirithous
-%Ortrera
-%Achilles son
-
-
 %Then theseus trees from poseidon and aethra , daughter of pitheus, son of pelops
 %Then amazons
 %Then sisyphus extension to pelops house
 %Redo laertes father as son of cephalus and procris, see Bellophorn and sisyphus extension
-%Then jason and patrocles
-%Then romans, latinus is NOT son odysseus and circe, add tiberius as a potami
+%Then jason, argonauts, and nephele and athamas kids
+%Trojan War Greeks: Ajax, from alcathous, and achilles son, patrocles, and more
 %Heracleidae, include maybe first wife and relation to jocasta through creon
-%Trojan War Greeks: Ajax, from alcathous, and achilles son, and more
+%Then romans, latinus is NOT son odysseus and circe, add tiberius as a potami
+%Misc: atlanta, daedalus, orpheus
 
 %Primordial
 male(chaos).
@@ -220,6 +211,10 @@ male(iobates).
 male(sarpedon_troy).
 male(hippolochus).
 male(glaucus_of_lydia).
+male(creon).
+male(eteocles).
+male(polyneices).
+male(bisaltes).
 
 %Monsters
 male(centaurus).
@@ -243,6 +238,7 @@ male(python).
 male(arion).
 male(minotaur).
 male(echion).
+male(golden_ram).
 
 %Water Peeps
 male(ladon_river).
@@ -388,7 +384,6 @@ female(semele).
 female(agave).
 female(ariadne).
 female(jocasta).
-female(electra_rex).
 female(iambe).
 female(calcye).
 female(protogencia).
@@ -449,6 +444,9 @@ female(eurynome_athenian).
 female(philone).
 female(laodamia).
 female(merope_megareus).
+female(ismene).
+female(antigone).
+female(theophane).
 
 %Muses
 female(calliope).
@@ -478,7 +476,7 @@ female(pallas_sea).
 female(creusa).
 female(memphis).
 female(achiro).
-female(telphassa).
+female(telephassa).
 female(hespersis).
 female(chiane).
 female(amphissus).
@@ -879,8 +877,8 @@ parent_of(nycteus, antiope).
 parent_of(polyxo, antiope).
 parent_of(antiope, amphion).
 parent_of(zeus, amphion).
-parent_of(antiope, zetes).
-parent_of(zeus, zetes).
+parent_of(antiope, zethus).
+parent_of(zeus, zethus).
 parent_of(pan, iambe).
 parent_of(echo, iambe).
 parent_of(hermes, myrtilus).
@@ -934,6 +932,11 @@ parent_of(icarius, penelope).
 parent_of(periboea, penelope).
 parent_of(odysseus, telemachus).
 parent_of(penelope, telemachus).
+parent_of(helios, bisaltes).
+parent_of(gaia, bisaltes).
+parent_of(bisaltes, theophane).
+parent_of(poseidon, golden_ram).
+parent_of(theophane, golden_ram).
 
 %Argive Humans
 parent_of(melia, phoroneus).
@@ -968,13 +971,13 @@ parent_of(acrisius, danae).
 parent_of(eurydice, danae).
 parent_of(danae, perseus).
 parent_of(zeus, perseus).
-parent_of(telphassa, phoenix).
+parent_of(telephassa, phoenix).
 parent_of(agenor, phoenix).
-parent_of(telphassa, cilix).
+parent_of(telephassa, cilix).
 parent_of(agenor, cilix).
-parent_of(telphassa, cadmus).
+parent_of(telephassa, cadmus).
 parent_of(agenor, cadmus).
-parent_of(telphassa, europa).
+parent_of(telephassa, europa).
 parent_of(agenor, europa).
 parent_of(cadmus, ino).
 parent_of(harmonia, ino).
@@ -1003,10 +1006,17 @@ parent_of(minos, ariadne).
 parent_of(pentheus, menoeleus).
 parent_of(labdacus, laius).
 parent_of(menoeleus, jocasta).
+parent_of(menoeleus, creon).
 parent_of(jocasta, oedipus).
 parent_of(laius, oedipus).
-parent_of(oedipus, electra_rex).
-parent_of(jocasta, electra_rex).
+parent_of(jocasta, eteocles).
+parent_of(oedipus, eteocles).
+parent_of(jocasta, polyneices).
+parent_of(oedipus, polyneices).
+parent_of(jocasta, ismene).
+parent_of(oedipus, ismene).
+parent_of(jocasta, antigone).
+parent_of(oedipus, antigone).
 parent_of(dionysus, staphylus).
 parent_of(ariadne, staphylus).
 parent_of(dionysus, oenopion).
@@ -1261,8 +1271,7 @@ parent_of(phorcys, thoosa).
 parent_of(ceto, thoosa).
 parent_of(nilus, memphis).
 parent_of(nilus, achiro).
-parent_of(nilus, telphassa).
-parent_of(nephele, telphassa).
+parent_of(nilus, telephassa).
 parent_of(hesperus, hespersis).
 parent_of(daedalion, chiane).
 parent_of(dryops, dryope).
