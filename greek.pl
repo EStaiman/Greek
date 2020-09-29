@@ -5,7 +5,7 @@
 %Then jason, argonauts, and nephele and athamas kids
 %Trojan War Greeks: Ajax, from alcathous, and achilles son, patrocles, and more
 %Heracleidae, include maybe first wife and relation to jocasta through creon
-%Then romans, latinus is NOT son odysseus and circe, add tiberius as a potami
+%Then romans, latinus is NOT son odysseus and circe, add tiberius as a potami (oceanus and tethys)
 %Misc: atlanta, daedalus, orpheus
 
 %Primordial
