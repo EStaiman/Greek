@@ -14,14 +14,14 @@ Keep in mind that in order to avoid warnings from Prolog, you must have all fact
 There are many rules in this project that you can use in your queries. Some rules are internal and should not be called unless you really understand what you are doing.
 
 
-The first set of rules are the relationship rules of the form relationship_of(X,Y). These rules mean that: \n
-X is the <relationship> of Y \n
-For example, parent_of(X,Y) means that X is the parent of Y. \n
+The first set of rules are the relationship rules of the form relationship_of(X,Y). These rules mean that:
+X is the <relationship> of Y
+For example, parent_of(X,Y) means that X is the parent of Y.
 You can have either X or Y as a variable. If you have neither as a variable, it will test the truthfulness of the relationship. For example, parent_of(Alice, Bob). will return true based off of the propositions we have listed in the previous section. parent_of(Bob, Alice). will likewise return false. If you queried parent_of(Alice, X)., Prolog will return Bob, as he is the first (and only) instantiation that satisfies this relationship. Entering in a semicolon will cause Prolog to search for another instantiation of X that will satisfy the relationship. You can keep doing this for all true values, or you can use the rules in the next section.
 
 
-The next set of rules are the user-friendly rules of the relationships. They return all elements that satisfy the relationship. These rules mean that: \n
-Y are all the <relationship> of X. \n
+The next set of rules are the user-friendly rules of the relationships. They return all elements that satisfy the relationship. These rules mean that:
+Y are all the <relationship> of X.
 For example bros(X,Y) mean that Y will be an array with all of the brothers of X. Y must be a variable. These rule can check true or false, but will only return true if the second argument is a list of all things that satisfy the relationship in alphabetical order, so it is not recommended. Using actual Greek mythology, bros(Zeus, X). will return [hades, poseidon].
 
 The next rule is whois(X), which will show all the basic info of X. X must not be a variable.
