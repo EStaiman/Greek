@@ -30,7 +30,7 @@ The next rules are the complex rules and fall into two categories. Most of these
 
 cas(X,Y,S) :- Finds all of the common ancestors of X and Y. S must be a variable and is returned as an array of people.
 
-mrca(X,Y,Z) :- Finds most recent common ancestor(s) of X and Y. mrca goes through all cas, forms a path from X to the ca to Y, and takes the length. The path(s) with the shortest length are the ones whose common ancestor relates X and Y the closest. These common ancestor(s) are returned as the most recent common ancestor(s). Z must be a variable and is returned as an array of people (potentilly of length 1). \n
+mrca(X,Y,Z) :- Finds most recent common ancestor(s) of X and Y. mrca goes through all cas, forms a path from X to the ca to Y, and takes the length. The path(s) with the shortest length are the ones whose common ancestor relates X and Y the closest. These common ancestor(s) are returned as the most recent common ancestor(s). Z must be a variable and is returned as an array of people (potentilly of length 1).
 Note: In a normal tree this process would be overly complex, as you should just pick the node at the greatest depth. But due to the convoluted and tangled tree that is Greek mythology, this method was proven necessary through experimentation.
 
 paths(X,Y) :- Generates the shortest path from X to a common ancestor to Y for all most recent common ancestors of X and Y. None of the arguments can be a variable. The method will display the mrca(s), and then for every element list the element used and the paths formed.
@@ -41,7 +41,7 @@ all_paths(X,Y) :- Generates the shortest path from X to a common ancestor to Y f
 
 rel(X,Y) :- Describes the relationship between X and Y, using the most recent common ancestors as the common ancestor(s).  None of the arguments can be a variable. This will essentially call paths(X,Y), and after every set of paths, it will list the relationship underneath.
 
-all_rel(X,Y) :- Describes all of the relationships between X and Y, using all of the common ancestors. This has the same format as rel(X,Y), except its essentially calling all_paths(X,Y), so you have the relationship for every path. None of the arguments can be a variable. \n
+all_rel(X,Y) :- Describes all of the relationships between X and Y, using all of the common ancestors. This has the same format as rel(X,Y), except its essentially calling all_paths(X,Y), so you have the relationship for every path. None of the arguments can be a variable.
 Note: Some paths will pass through other common ancestors, and if these extra-long paths were used for the relationship the incorrect relationship would output. This is fixed internally however, so all relationships displayed are correct.
 
 num(X) :- Simply displays the number of gods/monsters/nymphs/humans in the system. X must be a variable.
