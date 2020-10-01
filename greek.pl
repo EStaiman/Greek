@@ -238,7 +238,7 @@ male(python).
 male(arion).
 male(minotaur).
 male(echion).
-male(golden_ram).
+male(krysomallos).
 
 %Water Peeps
 male(ladon_river).
@@ -935,8 +935,8 @@ parent_of(penelope, telemachus).
 parent_of(helios, bisaltes).
 parent_of(gaia, bisaltes).
 parent_of(bisaltes, theophane).
-parent_of(poseidon, golden_ram).
-parent_of(theophane, golden_ram).
+parent_of(poseidon, krysomallos).
+parent_of(theophane, krysomallos).
 
 %Argive Humans
 parent_of(melia, phoroneus).
