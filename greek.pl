@@ -2,7 +2,7 @@
 %Then amazons
 %Then sisyphus extension to pelops house
 %Redo laertes father as son of cephalus and procris, see Bellophorn and sisyphus extension
-%Then jason, argonauts, and nephele and athamas kids
+%Then jason, argonauts, and nephele and athamas kids, with ino too
 %Trojan War Greeks: Ajax, from alcathous, and achilles son, patrocles, and more
 %Heracleidae, include maybe first wife and relation to jocasta through creon
 %Then romans, latinus is NOT son odysseus and circe, add tiberius as a potami (oceanus and tethys)
@@ -68,6 +68,7 @@ male(plutus).
 male(aristaeus).
 male(dionysus).
 male(phosphorus).
+male(eros).
 
 %Humans
 male(deucalion).
@@ -199,7 +200,7 @@ male(arabius).
 male(phineus).
 male(plexippus).
 male(pandion_phineus).
-male(cecrops).
+male(cecrops_younger).
 male(pandion_younger).
 male(nisos).
 male(aegeus).
@@ -215,6 +216,21 @@ male(creon).
 male(eteocles).
 male(polyneices).
 male(bisaltes).
+male(helice).
+male(atrax).
+male(eioneus).
+male(pirithous).
+male(polypoetes).
+male(pittheus).
+male(theseus).
+male(demophon).
+male(acamas).
+male(myrmidon).
+male(triopas).
+male(aloeus).
+male(erysichthon).
+male(sciron).
+
 
 %Monsters
 male(centaurus).
@@ -239,6 +255,9 @@ male(arion).
 male(minotaur).
 male(echion).
 male(krysomallos).
+male(otus).
+male(ephialtes).
+male(procrustes).
 
 %Water Peeps
 male(ladon_river).
@@ -258,7 +277,6 @@ male(percy).
 
 
 %Primordial
-female(chaos).
 female(gaia).
 female(nyx).
 female(eris).
@@ -447,6 +465,17 @@ female(merope_megareus).
 female(ismene).
 female(antigone).
 female(theophane).
+female(ion).
+female(bura).
+female(hippoboetia).
+female(dia).
+female(aethra).
+female(phaedra).
+female(eurymedousa).
+female(pisidice).
+female(canace).
+female(iphimedeia).
+female(hiscilla).
 
 %Muses
 female(calliope).
@@ -543,7 +572,6 @@ parent_of(nyx, achlys).
 parent_of(aether, thalassa).
 parent_of(hemera, thalassa).
 parent_of(eris, adikia).
-parent_of(nyx, eros).
 
 %From ouranos sea foam
 parent_of(ouranos, aphrodite).
@@ -796,6 +824,8 @@ parent_of(ares, deimos).
 parent_of(aphrodite, deimos).
 parent_of(ares, phobos).
 parent_of(aphrodite, phobos).
+parent_of(ares, eros).
+parent_of(aphrodite, eros).
 parent_of(eros, hedone).
 parent_of(psyche, hedone).
 parent_of(hypnos, morpheus).
@@ -1212,9 +1242,9 @@ parent_of(cleopatra, plexippus).
 parent_of(phineus, plexippus).
 parent_of(cleopatra, pandion_phineus).
 parent_of(phineus, pandion_phineus).
-parent_of(pandion_elder, cecrops).
-parent_of(zeuxippe, cecrops).
-parent_of(cecrops, pandion_younger).
+parent_of(pandion_elder, cecrops_younger).
+parent_of(zeuxippe, cecrops_younger).
+parent_of(cecrops_younger, pandion_younger).
 parent_of(metiadusa, pandion_younger).
 parent_of(pandion_younger, nisos).
 parent_of(pylia, nisos).
@@ -1237,6 +1267,50 @@ parent_of(bellerophon, hippolochus).
 parent_of(zeus, sarpedon_troy).
 parent_of(laodamia, sarpedon_troy).
 parent_of(hippolochus, glaucus_of_lydia).
+
+%Theseus and Friends
+parent_of(apollo, ion).
+parent_of(creusa_athens, ion).
+parent_of(helice, bura).
+parent_of(ion, bura).
+parent_of(bura, atrax).
+parent_of(peneus, atrax).
+parent_of(atrax, hippoboetia).
+parent_of(eioneus, dia).
+parent_of(zeus, pirithous).
+parent_of(dia, pirithous).
+parent_of(hippoboetia, polypoetes).
+parent_of(pirithous, polypoetes).
+parent_of(pelops, pittheus).
+parent_of(hippodamia, pittheus).
+parent_of(pittheus, aethra).
+parent_of(poseidon, theseus).
+parent_of(aethra, theseus).
+parent_of(minos, phaedra).
+parent_of(pasiphae, phaedra).
+parent_of(theseus, demophon).
+parent_of(phaedra, demophon).
+parent_of(theseus, acamas).
+parent_of(phaedra, acamas).
+parent_of(achelous, eurymedousa).
+parent_of(eurymedousa, myrmidon).
+parent_of(zeus, myrmidon).
+parent_of(aeolus, pisidice).
+parent_of(enarete, pisidice).
+parent_of(aeolus, canace).
+parent_of(enarete, canace).
+parent_of(myrmidon, hiscilla).
+parent_of(pisidice, hiscilla).
+parent_of(canace, triopas).
+parent_of(poseidon, triopas).
+parent_of(canace, aloeus).
+parent_of(poseidon, aloeus).
+parent_of(hiscilla, iphimedeia).
+parent_of(triopas, iphimedeia).
+parent_of(hiscilla, erysichthon).
+parent_of(triopas, erysichthon).
+parent_of(poseidon, sciron).
+parent_of(iphimedeia, sciron).
 
 %Muses
 parent_of(zeus, calliope).
@@ -1316,6 +1390,11 @@ parent_of(achelous, sirens).
 parent_of(poseidon, arion).
 parent_of(demeter, arion).
 parent_of(pasiphae, minotaur).
+parent_of(poseidon, otus).
+parent_of(iphimedeia, otus).
+parent_of(poseidon, ephialtes).
+parent_of(iphimedeia, ephialtes).
+parent_of(poseidon, procrustes).
 
 %Typhon Monsters
 parent_of(typhon, orthus).
@@ -1555,4 +1634,4 @@ removed(X) :- write(X), write(" times").
 
 %Returns number of beings in program
 num(X) :- findall(M, male(M), Men), findall(F, female(F), Women), length(Men, L1), length(Women, L2),
-        X is L1 + L2 - 1.
+        X is L1 + L2.
