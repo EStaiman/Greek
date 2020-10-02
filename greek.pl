@@ -241,6 +241,7 @@ male(hippothoon).
 male(actaeus).
 male(cecrops_elder).
 male(cephalus_of_athens).
+male(hippolytus).
 
 
 %Monsters
@@ -496,6 +497,11 @@ female(aglaurus_actaeus).
 female(pandrosus).
 female(aglaurus_cecrops).
 female(herse).
+female(otrera).
+female(hippolyta).
+female(antiope_amazon).
+female(penthesilea).
+female(melanippe).
 
 
 %Muses
@@ -941,6 +947,16 @@ parent_of(erytheia, eurytion).
 parent_of(gordios, midas).
 parent_of(midas, lityerses).
 parent_of(demeter, lityerses).
+parent_of(otrera, hippolyta).
+parent_of(ares, hippolyta).
+parent_of(otrera, antiope_amazon).
+parent_of(ares, antiope_amazon).
+parent_of(otrera, melanippe).
+parent_of(ares, melanippe).
+parent_of(otrera, penthesilea).
+parent_of(ares, penthesilea).
+parent_of(hippolyta, hippolytus).
+parent_of(theseus, hippolytus).
 
 %Hyperion Branch Humans
 parent_of(helios, heliadae).
@@ -1477,17 +1493,20 @@ mother_of(X,Y) :- parent_of(X,Y), female(X).
 
 half_sister_of_f(X,Y) :- female(X), father_of(F,Y), father_of(F,X), X \== Y.
 half_sister_of_m(X,Y) :- female(X), mother_of(F,Y), mother_of(F,X), X \== Y.
-half_sister_of(X,Y) :- (half_sister_of_f(X,Y) ; half_sister_of_m(X,Y)).
+half_sister_of(X,Y) :- (half_sister_of_f(X,Y) ; half_sister_of_m(X,Y)),
+              not(sister_of(X,Y)).
 
 sister_of(X,Y) :- half_sister_of_f(X,Y), half_sister_of_m(X,Y).
 
 half_brother_of_f(X,Y) :- male(X), father_of(F,Y), father_of(F,X), X \== Y.
 half_brother_of_m(X,Y) :- male(X), mother_of(F,Y), mother_of(F,X), X \== Y.
-half_brother_of(X,Y) :- (half_brother_of_f(X,Y) ; half_brother_of_m(X,Y)).
+half_brother_of(X,Y) :- (half_brother_of_f(X,Y) ; half_brother_of_m(X,Y)),
+              not(brother_of(X,Y)).
 
 brother_of(X,Y) :- half_brother_of_f(X,Y), half_brother_of_m(X,Y).
 
-half_sibling_of(X,Y) :- (half_brother_of(X,Y) ; half_sister_of(X,Y)).
+half_sibling_of(X,Y) :- (half_brother_of(X,Y) ; half_sister_of(X,Y)),
+              not(sibling_of(X,Y)).
 sibling_of(X,Y) :- (brother_of(X,Y) ; sister_of(X,Y)).
 
 ancestor_of(X,Y) :- parent_of(X,Y).
