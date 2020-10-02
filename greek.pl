@@ -230,6 +230,17 @@ male(triopas).
 male(aloeus).
 male(erysichthon).
 male(sciron).
+male(cranus).
+male(amphictyon).
+male(rarus).
+male(cercyon).
+male(celeus).
+male(demophoon).
+male(triptolemus).
+male(hippothoon).
+male(actaeus).
+male(cecrops_elder).
+male(cephalus_of_athens).
 
 
 %Monsters
@@ -476,6 +487,16 @@ female(pisidice).
 female(canace).
 female(iphimedeia).
 female(hiscilla).
+female(pedias).
+female(atthis).
+female(amphictyon_daughter).
+female(alope).
+female(metanira).
+female(aglaurus_actaeus).
+female(pandrosus).
+female(aglaurus_cecrops).
+female(herse).
+
 
 %Muses
 female(calliope).
@@ -1215,6 +1236,16 @@ parent_of(hermione, tisamenus).
 parent_of(orestes, tisamenus).
 
 %Athenian Humans
+parent_of(actaeus, aglaurus_actaeus).
+parent_of(gaia, cecrops_elder).
+parent_of(aglaurus_actaeus, pandrosus).
+parent_of(cecrops_elder, pandrosus).
+parent_of(aglaurus_actaeus, aglaurus_cecrops).
+parent_of(cecrops_elder, aglaurus_cecrops).
+parent_of(aglaurus_actaeus, herse).
+parent_of(cecrops_elder, herse).
+parent_of(hermes, cephalus_of_athens).
+parent_of(herse, cephalus_of_athens).
 parent_of(cephissus, narcissus).
 parent_of(lirope, narcissus).
 parent_of(hephaestus, ericthonius).
@@ -1311,6 +1342,24 @@ parent_of(hiscilla, erysichthon).
 parent_of(triopas, erysichthon).
 parent_of(poseidon, sciron).
 parent_of(iphimedeia, sciron).
+parent_of(gaia, cranus).
+parent_of(cranus, atthis).
+parent_of(pedias, atthis).
+parent_of(cranus, rarus).
+parent_of(pedias, rarus).
+parent_of(atthis, amphictyon_daughter).
+parent_of(amphitryon, amphictyon_daughter).
+parent_of(poseidon, cercyon).
+parent_of(amphictyon_daughter, cercyon).
+parent_of(cercyon, alope).
+parent_of(poseidon, hippothoon).
+parent_of(alope, hippothoon).
+parent_of(amphictyon_daughter, celeus).
+parent_of(rarus, celeus).
+parent_of(celeus, demophoon).
+parent_of(metanira, demophoon).
+parent_of(celeus, triptolemus).
+parent_of(metanira, triptolemus).
 
 %Muses
 parent_of(zeus, calliope).
@@ -1463,7 +1512,7 @@ ancs(X,Y) :- findall(Z, ancestor_of(Z,X), R), sort(R,Y) ; true.
 
 
 %Prints basic information of element X
-whois(X) :- (male(X) -> Gen = male; Gen = female),
+whois(X) :- (male(X) -> Gen = "male"; Gen = "female"),
           pars(X,Pars), kids(X,Kids), kids_with(X,Sos), half_sibs(X,Hsibs),
           sibs(X,Sibs), path_to_anc(X,chaos,Path),
           write(X), write(" is "), write(Gen), nl,
