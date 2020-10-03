@@ -1,12 +1,8 @@
-%Then theseus trees from poseidon and aethra , daughter of pitheus, son of pelops
-%Then amazons
-%Then sisyphus extension to pelops house
-%Redo laertes father as son of cephalus and procris, see Bellophorn and sisyphus extension
 %Then jason, argonauts, and nephele and athamas kids, with ino too
 %Trojan War Greeks: Ajax, from alcathous, and achilles son, patrocles, and more
 %Heracleidae, include maybe first wife and relation to jocasta through creon
 %Then romans, latinus is NOT son odysseus and circe, add tiberius as a potami (oceanus and tethys)
-%Misc: atlanta, daedalus, orpheus
+%Misc: atlanta, daedalus, orpheus, aeolus_wind from aeolus
 
 %Primordial
 male(chaos).
@@ -242,6 +238,20 @@ male(actaeus).
 male(cecrops_elder).
 male(cephalus_of_athens).
 male(hippolytus).
+male(xuthus).
+male(deioneus).
+male(actor).
+male(cephalus).
+male(phylacus).
+male(ornytion).
+male(menoetius).
+male(phocus_of_corninth).
+male(phocus_aeacus).
+male(crisus).
+male(ornytus).
+male(naubolus).
+male(strophius).
+male(pylades).
 
 
 %Monsters
@@ -341,6 +351,7 @@ female(lirope).
 %Nerieds
 female(amphrite).
 female(thetis).
+female(psamathe).
 
 %Pleiades
 female(maia).
@@ -399,7 +410,6 @@ female(circe).
 female(pasiphae).
 female(medea).
 female(chloris).
-female(euryodeia).
 female(amphithea).
 female(chalcomedusa).
 female(anticlea).
@@ -502,6 +512,10 @@ female(hippolyta).
 female(antiope_amazon).
 female(penthesilea).
 female(melanippe).
+female(diomede_xuthus).
+female(asterodia).
+female(perineike).
+female(antiphateia).
 
 
 %Muses
@@ -765,6 +779,8 @@ parent_of(creusa, daphne).
 parent_of(pontus, cephissus).
 parent_of(thalassa, cephissus).
 parent_of(cephissus, diogenia).
+parent_of(nereus, psamathe).
+parent_of(doris, psamathe).
 
 %Pleiades
 parent_of(atlas, maia).
@@ -958,6 +974,40 @@ parent_of(ares, penthesilea).
 parent_of(hippolyta, hippolytus).
 parent_of(theseus, hippolytus).
 
+%Sisyphus and Xuthus
+parent_of(hellen, xuthus).
+parent_of(orseis, xuthus).
+parent_of(creusa_athens, diomede).
+parent_of(xuthus, diomede).
+parent_of(aeolus, deioneus).
+parent_of(enarete, deioneus).
+parent_of(diomede, actor).
+parent_of(deioneus, actor).
+parent_of(diomede, asterodia).
+parent_of(deioneus, asterodia).
+parent_of(diomede, cephalus).
+parent_of(deioneus, cephalus).
+parent_of(diomede, phylacus).
+parent_of(deioneus, phylacus).
+parent_of(aegina, menoetius).
+parent_of(actor, menoetius).
+parent_of(psamathe, phocus_aeacus).
+parent_of(aeacus, phocus_aeacus).
+parent_of(phocus_aeacus, crisus).
+parent_of(asterodia, crisus).
+parent_of(sisyphus, ornytion).
+parent_of(merope, ornytion).
+parent_of(ornytion, phocus_of_corninth).
+parent_of(phocus_of_corninth, ornytus).
+parent_of(ornytus, naubolus).
+parent_of(naubolus, antiphateia).
+parent_of(perineike, antiphateia).
+parent_of(crisus, strophius).
+parent_of(antiphateia, strophius).
+parent_of(anaxibia, pylades).
+parent_of(strophius, pylades).
+
+
 %Hyperion Branch Humans
 parent_of(helios, heliadae).
 parent_of(rhodos, heliadae).
@@ -981,8 +1031,8 @@ parent_of(phosphorus, ceyx).
 parent_of(hesperus, daedalion).
 parent_of(hermes, autolycus).
 parent_of(chiane, autolycus).
-parent_of(zeus, arcesius).
-parent_of(euryodeia, arcesius).
+parent_of(cephalus, arcesius).
+parent_of(procris, arcesius).
 parent_of(autolycus, anticlea).
 parent_of(amphithea, anticlea).
 parent_of(arcesius, laertes).
