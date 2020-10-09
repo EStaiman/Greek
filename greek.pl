@@ -252,6 +252,53 @@ male(ornytus).
 male(naubolus).
 male(strophius).
 male(pylades).
+male(troezen).
+male(pelasgus).
+male(lycaon).
+male(nyctimus).
+male(arcas).
+male(apheidas).
+male(aleus).
+male(lycurgus).
+male(iasus).
+male(phaethon).
+male(astynous).
+male(sandocus).
+male(megassares).
+male(cinyras).
+male(pygmalion).
+male(adonis).
+male(golgos).
+male(elatus).
+male(pereus).
+male(salmoneus).
+male(cretheus).
+male(pelias).
+male(aeson).
+male(hyperphas).
+male(minyas).
+male(iphiclus_minyas).
+male(protesilaus).
+male(podarces).
+male(jason).
+male(alcimenes).
+male(thessalus).
+male(tisander).
+male(mermeros).
+male(medus).
+male(pheres).
+male(argus_jason).
+male(athamas).
+male(parthenopeus).
+male(anthas).
+male(schoeneus).
+male(phrixus).
+male(phrontis).
+male(melas).
+male(hyperes).
+male(hyperes_athamas).
+male(learchus).
+male(melicertes).
 
 
 %Monsters
@@ -347,6 +394,7 @@ female(melia).
 female(perse).
 female(idyia).
 female(lirope).
+female(meliboea).
 
 %Nerieds
 female(amphrite).
@@ -516,6 +564,28 @@ female(diomede_xuthus).
 female(asterodia).
 female(perineike).
 female(antiphateia).
+female(chalciope).
+female(nonakris).
+female(callisto).
+female(alcidice).
+female(antione).
+female(pharnace).
+female(galatea).
+female(metharme).
+female(myrrha).
+female(beroe).
+female(laodice).
+female(neaera).
+female(atlanta).
+female(tyro).
+female(eurynassa).
+female(clymene_minyas).
+female(alcimede).
+female(diomedia).
+female(themisto).
+female(helle).
+female(eurycleia).
+female(eriopis).
 
 
 %Muses
@@ -562,6 +632,7 @@ female(daphne).
 female(diogenia).
 female(praxithea_naiad).
 female(zeuxippe).
+female(erato_dryad).
 
 %Monsters
 female(scylla).
@@ -746,6 +817,8 @@ parent_of(oceanus, peneus).
 parent_of(tethys, peneus).
 parent_of(oceanus, lirope).
 parent_of(tethys, lirope).
+parent_of(oceanus, meliboea).
+parent_of(tethys, meliboea).
 
 %Water Peeps
 parent_of(pontus, eurybia).
@@ -981,13 +1054,13 @@ parent_of(creusa_athens, diomede).
 parent_of(xuthus, diomede).
 parent_of(aeolus, deioneus).
 parent_of(enarete, deioneus).
-parent_of(diomede, actor).
+parent_of(diomede_xuthus, actor).
 parent_of(deioneus, actor).
-parent_of(diomede, asterodia).
+parent_of(diomede_xuthus, asterodia).
 parent_of(deioneus, asterodia).
-parent_of(diomede, cephalus).
+parent_of(diomede_xuthus, cephalus).
 parent_of(deioneus, cephalus).
-parent_of(diomede, phylacus).
+parent_of(diomede_xuthus, phylacus).
 parent_of(deioneus, phylacus).
 parent_of(aegina, menoetius).
 parent_of(actor, menoetius).
@@ -1215,6 +1288,8 @@ parent_of(hippodamia, alcathous).
 parent_of(pelops, alcathous).
 parent_of(hippodamia, astydamea).
 parent_of(pelops, astydamea).
+parent_of(hippodamia, troezen).
+parent_of(pelops, troezen).
 parent_of(minos, catreus).
 parent_of(pasiphae, catreus).
 parent_of(catreus, aerope).
@@ -1413,8 +1488,10 @@ parent_of(cranus, atthis).
 parent_of(pedias, atthis).
 parent_of(cranus, rarus).
 parent_of(pedias, rarus).
+parent_of(deucalion, amphictyon).
+parent_of(pyrra, amphictyon).
 parent_of(atthis, amphictyon_daughter).
-parent_of(amphitryon, amphictyon_daughter).
+parent_of(amphictyon, amphictyon_daughter).
 parent_of(poseidon, cercyon).
 parent_of(amphictyon_daughter, cercyon).
 parent_of(cercyon, alope).
@@ -1426,6 +1503,123 @@ parent_of(celeus, demophoon).
 parent_of(metanira, demophoon).
 parent_of(celeus, triptolemus).
 parent_of(metanira, triptolemus).
+
+%Jason
+parent_of(gaia, pelasgus).
+parent_of(pelasgus, lycaon).
+parent_of(meliboea, lycaon).
+parent_of(idyia, chalciope).
+parent_of(aeetes, chalciope).
+parent_of(lycaon, callisto).
+parent_of(nonakris, callisto).
+parent_of(lycaon, nyctimus).
+parent_of(nonakris, nyctimus).
+parent_of(zeus, arcas).
+parent_of(callisto, arcas).
+parent_of(eos, phaethon).
+parent_of(cephalus_of_athens, phaethon).
+parent_of(phaethon, astynous).
+parent_of(astynous, sandocus).
+parent_of(megassares, pharnace).
+parent_of(pharnace, cinyras).
+parent_of(sandocus, cinyras).
+parent_of(galatea, metharme).
+parent_of(pygmalion, metharme).
+parent_of(metharme, myrrha).
+parent_of(cinyras, myrrha).
+parent_of(myrrha, adonis).
+parent_of(cinyras, adonis).
+parent_of(adonis, golgos).
+parent_of(aphrodite, golgos).
+parent_of(adonis, beroe).
+parent_of(aphrodite, beroe).
+parent_of(metharme, laodice).
+parent_of(cinyras, laodice).
+parent_of(arcas, apheidas).
+parent_of(erato_dryad, apheidas).
+parent_of(arcas, elatus).
+parent_of(erato_dryad, elatus).
+parent_of(apheidas, aleus).
+parent_of(elatus, pereus).
+parent_of(laodice, pereus).
+parent_of(pereus, neaera).
+parent_of(aleus, lycurgus).
+parent_of(neaera, lycurgus).
+parent_of(lycurgus, iasus).
+parent_of(antione, iasus).
+parent_of(aleus, alcidice).
+parent_of(neaera, alcidice).
+parent_of(iasus, atlanta).
+parent_of(clymene_minyas, atlanta).
+parent_of(atlanta, parthenopeus).
+parent_of(hippomenes, parthenopeus).
+parent_of(aeolus, salmoneus).
+parent_of(enarete, salmoneus).
+parent_of(alcidice, tyro).
+parent_of(salmoneus, tyro).
+parent_of(poseidon, pelias).
+parent_of(tyro, pelias).
+parent_of(aeolus, cretheus).
+parent_of(enarete, cretheus).
+parent_of(tyro, aeson).
+parent_of(cretheus, aeson).
+parent_of(hyperphas, eurynassa).
+parent_of(aeolus, minyas).
+parent_of(enarete, minyas).
+parent_of(minyas, clymene_minyas).
+parent_of(eurynassa, clymene_minyas).
+parent_of(clymene_minyas, alcimede).
+parent_of(phylacus, alcimede).
+parent_of(clymene_minyas, iphiclus_minyas).
+parent_of(phylacus, iphiclus_minyas).
+parent_of(aeson, jason).
+parent_of(alcimede, jason).
+parent_of(jason, thessalus).
+parent_of(medea, thessalus).
+parent_of(jason, eriopis).
+parent_of(medea, eriopis).
+parent_of(jason, tisander).
+parent_of(medea, tisander).
+parent_of(jason, medus).
+parent_of(medea, medus).
+parent_of(jason, mermeros).
+parent_of(medea, mermeros).
+parent_of(jason, argus_jason).
+parent_of(medea, argus_jason).
+parent_of(jason, pheres).
+parent_of(medea, pheres).
+parent_of(jason, alcimenes).
+parent_of(medea, alcimenes).
+parent_of(iphiclus_minyas, podarces).
+parent_of(diomedia, podarces).
+parent_of(iphiclus_minyas, protesilaus).
+parent_of(diomedia, protesilaus).
+parent_of(poseidon, hyperes).
+parent_of(alcyone, hyperes).
+parent_of(poseidon, anthas).
+parent_of(alcyone, anthas).
+parent_of(hypseus, themisto).
+parent_of(chlidanope, themisto).
+parent_of(aeolus, athamas).
+parent_of(enarete, athamas).
+parent_of(athamas, learchus).
+parent_of(ino, learchus).
+parent_of(athamas, melicertes).
+parent_of(ino, melicertes).
+parent_of(nephele, helle).
+parent_of(athamas, helle).
+parent_of(nephele, phrixus).
+parent_of(athamas, phrixus).
+parent_of(athamas, schoeneus).
+parent_of(themisto, schoeneus).
+parent_of(athamas, eurycleia).
+parent_of(themisto, eurycleia).
+parent_of(phrixus, phrontis).
+parent_of(chalciope, phrontis).
+parent_of(phrixus, melas).
+parent_of(chalciope, melas).
+parent_of(melas, hyperes_athamas).
+parent_of(eurycleia, hyperes_athamas).
 
 %Muses
 parent_of(zeus, calliope).
@@ -1753,3 +1947,6 @@ removed(X) :- write(X), write(" times").
 %Returns number of beings in program
 num(X) :- findall(M, male(M), Men), findall(F, female(F), Women), length(Men, L1), length(Women, L2),
         X is L1 + L2.
+
+%Lists all beings in database
+all(X) :- findall(Y, (male(Y) ; female(Y)), List), sort(List,X) ; true.
