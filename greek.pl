@@ -1,8 +1,8 @@
-%Then jason, argonauts, and nephele and athamas kids, with ino too
+%Argonauts
 %Trojan War Greeks: Ajax, from alcathous, and achilles son, patrocles, and more
 %Heracleidae, include maybe first wife and relation to jocasta through creon
 %Then romans, latinus is NOT son odysseus and circe, add tiberius as a potami (oceanus and tethys)
-%Misc: atlanta, daedalus, orpheus, aeolus_wind from aeolus
+%Misc: Daedalus, orpheus, aeolus_wind from aeolus
 
 %Primordial
 male(chaos).
@@ -378,6 +378,7 @@ female(hecate).
 female(arke).
 female(selene).
 female(eos).
+female(erytheia).
 
 %Oceanids
 female(clymene).
@@ -444,7 +445,6 @@ female(enarete).
 female(chryse).
 female(coronis).
 female(cleophema).
-female(coronis).
 female(psyche).
 female(io).
 female(libya).
@@ -1777,14 +1777,17 @@ ancs(X,Y) :- findall(Z, ancestor_of(Z,X), R), sort(R,Y) ; true.
 %Prints basic information of element X
 whois(X) :- (male(X) -> Gen = "male"; Gen = "female"),
           pars(X,Pars), kids(X,Kids), kids_with(X,Sos), half_sibs(X,Hsibs),
-          sibs(X,Sibs), path_to_anc(X,chaos,Path),
+          sibs(X,Sibs), ancs(X,Ancs), decs(X,Decs), (member(chaos,Ancs) ->
+            path_to_anc(X,chaos,Path) ; Path = []),
           write(X), write(" is "), write(Gen), nl,
           write("Their parents are: "), write(Pars), nl,
           write("Their kids are: "), write(Kids), nl,
           write("Their partners are: "), write(Sos), nl,
           write("Their half siblings are: "), write(Hsibs), nl,
           write("Their full siblings are: "), write(Sibs), nl,
-          write("Their shortest path to chaos is: "), write(Path).
+          write("Their shortest path to chaos is: "), write(Path), nl,
+          write("Their ancestors are: "), write(Ancs), nl,
+          write("Their descendents are: "), write(Decs).
 
 
 %Find all common ancestors of X and Y and return it
@@ -1802,9 +1805,10 @@ mrca(X,Y,Z) :- cas(X,Y,Array), length(Array,L), (L > 0 -> mrca_int(X,Y,Array,999
 
 %Internal rule used to find most recent common ancestors
 mrca_int(_,_,[],_,P,V) :- V = [P].
-mrca_int(X,Y,[H|T],N,P,V) :- path_to_anc(X,H,X1), length(X1,L1), path_to_anc(Y,H,Y1), length(Y1,L2),
-					                 L is L1 + L2, (N == L -> mrca_int(X,Y,T,L,[H,P],V) ;
-                           (N > L -> mrca_int(X,Y,T,L,H,V) ; mrca_int(X,Y,T,N,P,V))).
+mrca_int(X,Y,[H|T],N,P,V) :- path_to_anc(X,H,X1), length(X1,L1), path_to_anc(Y,H,Y1),
+                          length(Y1,L2), L is L1 + L2,
+                          (N == L -> mrca_int(X,Y,T,L,[H,P],V) ;
+                          (N > L -> mrca_int(X,Y,T,L,H,V) ; mrca_int(X,Y,T,N,P,V))).
 
 %Internal rule that finds the shortest path from X to its ancestor Y and return it
 path_to_anc(X,X,Y) :- true, Y = [X].
@@ -1920,8 +1924,8 @@ fix([_|T1],[_|T2],L1old,L2old,L1,L2) :- fix_int(T1,T2,L1old,L2old,L1,L2).
 fix_int([],[],_,_,L1,L2) :- L1 is 1, L2 is 1.
 fix_int([],_,_,L2old,L1,L2) :- L1 is 1, L2 is L2old.
 fix_int(_,[],L1old,_,L1,L2) :- L2 is 1, L1 is L1old.
-fix_int([H1|T1],[H2|T2],L1old,L2old,L1,L2) :-
-        (H1 = H2 -> (L1new is L1old - 1, L2new is L2old - 1, fix_int(T1,T2,L1new,L2new,L1,L2)) ;
+fix_int([H1|T1],[H2|T2],L1old,L2old,L1,L2) :- (H1 = H2 ->
+        (L1new is L1old - 1, L2new is L2old - 1, fix_int(T1,T2,L1new,L2new,L1,L2)) ;
         (L1 is L1old, L2 is L2old)).
 
 %Prints out number of greats given in X
@@ -1934,6 +1938,11 @@ cousin(2) :- write("second").
 cousin(3) :- write("third").
 cousin(4) :- write("fourth").
 cousin(5) :- write("fifth").
+cousin(6) :- write("sixth").
+cousin(7) :- write("seventh").
+cousin(8) :- write("eight").
+cousin(9) :- write("ninth").
+cousin(10) :- write("tenth").
 cousin(X) :- write(X).
 
 %Prints out the removed number given in X
@@ -1942,11 +1951,37 @@ removed(2) :- write("twice").
 removed(3) :- write("thrice").
 removed(4) :- write("four times").
 removed(5) :- write("five times").
+removed(6) :- write("six times").
+removed(7) :- write("seven times").
+removed(8) :- write("eight times").
+removed(9) :- write("nine times").
+removed(10) :- write("ten times").
 removed(X) :- write(X), write(" times").
 
+%Returns all people N generations after X
+gen(X,0,Y) :- Y = X.
+gen(X,N,Y) :- number(N), N > 0, flatten([X],Pars), findall(Kids, (member(Par,Pars),
+            findall(Kid, parent_of(Par,Kid), Kids)), Gen), flatten(Gen,Flat),
+            sort(Flat,Sort), N1 is N - 1, gen(Sort,N1,Y).
+
 %Returns number of beings in program
-num(X) :- findall(M, male(M), Men), findall(F, female(F), Women), length(Men, L1), length(Women, L2),
-        X is L1 + L2.
+num(X) :- findall(M, male(M), Men), findall(F, female(F), Women), length(Men, L1),
+        length(Women, L2), X is L1 + L2.
 
 %Lists all beings in database
 all(X) :- findall(Y, (male(Y) ; female(Y)), List), sort(List,X) ; true.
+
+%Outputs the element at the Nth position of the array given in the first argument
+find([H|_],0,Y) :- Y = H.
+find([_|T],N,Y) :- N > 0, N1 is N - 1, find(T,N1,Y).
+
+%Generates a random person
+random(X) :- all(Y), length(Y,L), random_between(0,L,N), find(Y,N,X).
+
+%Generates a relation between two random beings
+random_rel() :- random(X), random(Y), write("Reltion between "), write(X), write(" and "), write(Y), nl,
+              rel(X,Y).
+
+%Generates all relations between two random beings
+random_all_rel() :- random(X), random(Y), write("Reltion between "), write(X), write(" and "), write(Y), nl,
+              all_rel(X,Y).

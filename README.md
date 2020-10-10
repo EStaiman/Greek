@@ -14,14 +14,14 @@ Keep in mind that in order to avoid warnings from Prolog, you must have all fact
 There are many rules in this project that you can use in your queries. Some rules are internal and should not be called unless you really understand what you are doing.
 
 
-The first set of rules are the relationship rules of the form relationship_of(X,Y). These rules mean that:
-X is the <relationship> of Y
-For example, parent_of(X,Y) means that X is the parent of Y.
+The first set of rules are the relationship rules of the form relationship_of(X,Y). These rules mean that:  
+X is the <relationship> of Y  
+For example, parent_of(X,Y) means that X is the parent of Y.  
 You can have either X or Y as a variable. If you have neither as a variable, it will test the truthfulness of the relationship. For example, parent_of(Alice, Bob). will return true based off of the propositions we have listed in the previous section. parent_of(Bob, Alice). will likewise return false. If you queried parent_of(Alice, X)., Prolog will return Bob, as he is the first (and only) instantiation that satisfies this relationship. Entering in a semicolon will cause Prolog to search for another instantiation of X that will satisfy the relationship. You can keep doing this for all true values, or you can use the rules in the next section.
 
 
-The next set of rules are the user-friendly rules of the relationships. They return all elements that satisfy the relationship. These rules mean that:
-Y are all the <relationship> of X.
+The next set of rules are the user-friendly rules of the relationships. They return all elements that satisfy the relationship. These rules mean that:  
+Y are all the <relationship> of X.  
 For example bros(X,Y) mean that Y will be an array with all of the brothers of X. Y must be a variable. These rule can check true or false, but will only return true if the second argument is a list of all things that satisfy the relationship in alphabetical order, so it is not recommended. Using actual Greek mythology, bros(Zeus, X). will return [hades, poseidon].
 
 The next rule is whois(X), which will show all the basic info of X. X must not be a variable.
@@ -30,7 +30,7 @@ The next rules are the complex rules and fall into two categories. Most of these
 
 cas(X,Y,S) :- Finds all of the common ancestors of X and Y. S must be a variable and is returned as an array of people.
 
-mrca(X,Y,Z) :- Finds most recent common ancestor(s) of X and Y. mrca goes through all cas, forms a path from X to the ca to Y, and takes the length. The path(s) with the shortest length are the ones whose common ancestor relates X and Y the closest. These common ancestor(s) are returned as the most recent common ancestor(s). Z must be a variable and is returned as an array of people (potentilly of length 1).
+mrca(X,Y,Z) :- Finds most recent common ancestor(s) of X and Y. mrca goes through all cas, forms a path from X to the ca to Y, and takes the length. The path(s) with the shortest length are the ones whose common ancestor relates X and Y the closest. These common ancestor(s) are returned as the most recent common ancestor(s). Z must be a variable and is returned as an array of people (potentially of length 1).
 Note: In a normal tree this process would be overly complex, as you should just pick the node at the greatest depth. But due to the convoluted and tangled tree that is Greek mythology, this method was proven necessary through experimentation.
 
 paths(X,Y) :- Generates the shortest path from X to a common ancestor to Y for all most recent common ancestors of X and Y. None of the arguments can be a variable. The method will display the mrca(s), and then for every element list the element used and the paths formed.
@@ -44,4 +44,15 @@ rel(X,Y) :- Describes the relationship between X and Y, using the most recent co
 all_rel(X,Y) :- Describes all of the relationships between X and Y, using all of the common ancestors. This has the same format as rel(X,Y), except its essentially calling all_paths(X,Y), so you have the relationship for every path. None of the arguments can be a variable.
 Note: Some paths will pass through other common ancestors, and if these extra-long paths were used for the relationship the incorrect relationship would output. This is fixed internally however, so all relationships displayed are correct.
 
-num(X) :- Simply displays the number of gods/monsters/nymphs/humans in the system. X must be a variable.
+gen(X,N,Y) :- Lists all people N generations after X. For example, a N of 1 returns
+all children, N of 2 returns all grandchildren, etc. N of 0 returns X, and N less
+than 0 or not a number returns false. X must be a being, and N must be a number. Y must
+be a variable.
+
+num(X) :- Simply displays the number of beings in the system. X must be a variable.
+
+random(X) :- Generates a random being. X must be a variable.
+
+random_rel() :- Generates two random beings, and runs rel on those two beings. No arguments.
+
+random_all_rel() :- Generates two random beings, and runs all_rel on those two beings. No arguments.
