@@ -9,6 +9,8 @@ Please note. I recommend only using this if you are somewhat familiar with Prolo
 To install, please see install.txt.
 This can also be accessed in browser at https://swish.swi-prolog.org/p/Greek.pl
 
+NOTE: SWISH version may not be up to date. The most recent version will always be from this repository. SWISH will be updated every so often with any major additions/changes.
+
 
 First, how to add a new person/god/nymph/thing. You will need 1-3 facts (statements). Lets assume you are adding a new person Bob. First, you must either have male(Bob) or female(Bob). If they have no parents (either because they do not have any in mythology or you do not feel like adding them), you are done. If they have parents, you must define one or two parent_of propositions. If Bob's mom is Alice, and father is Jim, you must define parent_of(Jim,Bob) and parent_of(Alice,Bob). Note the order of these two clauses do not matter. Additionally, while I have defined some categories in the code, these are purely for organizational purposes and will in no way affect the program.
 
