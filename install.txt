@@ -1,6 +1,8 @@
 In browser, you can go to
 https://swish.swi-prolog.org/p/Greek.pl to access fully in browser.
 
+This SWISH version may not be the most recent version of the code. If the code is up to date, you can simply copy the contents of the greek.pl file and paste it into your own SWISH instance. The SWISH version will likely be updated after major additions/changes.
+
 
 Install instructions for Prolog SWI-Prolog:
 
