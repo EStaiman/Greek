@@ -1,11 +1,8 @@
-This project was done completely in Prolog. I recommend installing SWI-Prolog to query.
+In browser, you can go to
+https://swish.swi-prolog.org/p/Greek.pl to access fully in browser.
 
-In browser, you can utilize 
-https://swish.swi-prolog.org/ 
 
- 
-
-Here is how to install:
+Install instructions for Prolog SWI-Prolog:
 
 Windows
 
@@ -29,6 +26,8 @@ sudo apt-get update
 Finally, type
 sudo apt-get install swi-prolog
 
+
+How To Access and Edit:
 
 Once installed, the .pl file extension will be associated with Prolog. The code itself has no dependencies, so once downloaded it is ready to use. So, after downloading the code, you can simply open it in and it will by default bring you into the swipl application with the file loaded in. From there, you can begin querying. 
 In Linux, simply navigate to the location of the file and type
