@@ -58,6 +58,6 @@ num(X) :- Simply displays the number of beings in the system. X must be a variab
 
 random(X) :- Generates a random being. X must be a variable.
 
-random_rel() :- Generates two random beings, and runs rel on those two beings. No arguments.
+random_rel() :- Generates two random beings, and runs rel on those two beings. No arguments and no parentheses. Call by simplying typing random_rel.
 
-random_all_rel() :- Generates two random beings, and runs all_rel on those two beings. No arguments.
+random_all_rel() :- Generates two random beings, and runs all_rel on those two beings. No arguments and no parentheses. Call by simply typing ranom_all_rel.
